@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dots and Boxes Game by Manisrinivasa</title>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <h1 class="is-size-2">Dots and Boxes</h1>
+        </a>    
+      </div>
+    </nav>
+    <section class="hero is-black is-fullheight-with-navbar">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title has-text-centered">
+            Dots and Boxes
+          </h2>
+          <!-- player selection tabs -->
+          <div class="tabs is-toggle is-small is-toggle-rounded" id="playerselection">
+            <div>
+              <h4 class="is-size-5">Single player or Multiplayer?</h4>
+            </div>
+            <div>
+              <ul>
+                <li class="select-player is-active">
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-laptop-code"></i></span>
+                    <span>Computer</span>
+                  </a>
+                </li>
+                <li class="select-player">
+                  <a>
+                    <span class="icon is-small"><i class="fab fa-draft2digital"></i></span>
+                    <span>2-Player</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- box size -->
+          <div class="tabs is-toggle is-small is-toggle-rounded">
+            <div>
+              <h4 class="is-size-5">How many boxes?</h4>
+            </div>
+            <div>
+              <ul>
+                <li class="is-active">
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-boxes"></i></span>
+                    <span>5x4</span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-boxes"></i></span>
+                    <span>8x6</span>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <span class="icon is-small"><i class="fas fa-boxes"></i></span>
+                    <span>11x8</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- settings -->
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <!-- Any other Bulma elements you want -->
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div>
+          <!-- play game button -->
+          <div id="playnow-container">
+            <a class="button is-dark" id="playnow">
+              <span class="icon is-small"><i class="fas fa-play-circle"></i></span>
+              <span>Play Now!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero is-dark is-fullheight-with-navbar hide">
+      <div class="hero-body">
+        <div class="container">
+          <p class="title">            
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+      </div>
+    </div>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/game.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </body>
+</html>

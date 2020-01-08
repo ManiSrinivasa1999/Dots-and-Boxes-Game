@@ -1,0 +1,19 @@
+.hide {
+  display: none !important;
+}
+
+h1,h2 {
+  font-family: 'Abril Fatface', cursive;
+}
+
+#playerselection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#playnow-container {
+  display: flex;
+  justify-content: center;
+}
