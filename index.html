@@ -14,14 +14,17 @@
         </a>    
       </div>
     </nav>
-    <section class="hero is-black is-fullheight-with-navbar">
+    <div class="hero is-black is-fullheight-with-navbar" id="start-view">
       <div class="hero-body">
         <div class="container">
           <h2 class="title has-text-centered">
             Dots and Boxes
           </h2>
           <!-- player selection tabs -->
-          <div class="tabs is-toggle is-small is-toggle-rounded" id="playerselection">
+          <div 
+            class="tabs is-toggle is-small is-toggle-rounded" 
+            id="playerselection"
+          >
             <div>
               <h4 class="is-size-5">Single player or Multiplayer?</h4>
             </div>
@@ -29,13 +32,17 @@
               <ul>
                 <li class="select-player is-active">
                   <a>
-                    <span class="icon is-small"><i class="fas fa-laptop-code"></i></span>
+                    <span class="icon is-small">
+                      <i class="fas fa-laptop-code"></i>
+                    </span>
                     <span>Computer</span>
                   </a>
                 </li>
                 <li class="select-player">
                   <a>
-                    <span class="icon is-small"><i class="fab fa-draft2digital"></i></span>
+                    <span class="icon is-small">
+                      <i class="fab fa-draft2digital"></i>
+                    </span>
                     <span>2-Player</span>
                   </a>
                 </li>
@@ -49,22 +56,28 @@
             </div>
             <div>
               <ul>
-                <li class="is-active">
+                <li class="select-boxes is-active">
                   <a>
-                    <span class="icon is-small"><i class="fas fa-boxes"></i></span>
-                    <span>5x4</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-boxes"></i>
+                    </span>
+                    <span>5x5</span>
                   </a>
                 </li>
-                <li>
+                <li class="select-boxes">
                   <a>
-                    <span class="icon is-small"><i class="fas fa-boxes"></i></span>
-                    <span>8x6</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-boxes"></i>
+                    </span>
+                    <span>8x8</span>
                   </a>
                 </li>
-                <li>
+                <li class="select-boxes">
                   <a>
-                    <span class="icon is-small"><i class="fas fa-boxes"></i></span>
-                    <span>11x8</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-boxes"></i>
+                    </span>
+                    <span>11x11</span>
                   </a>
                 </li>
               </ul>
@@ -76,30 +89,35 @@
             <div class="modal-content">
               <!-- Any other Bulma elements you want -->
             </div>
-            <button class="modal-close is-large" aria-label="close"></button>
+            <button class="modal-close is-large" aria-label="close">
+            </button>
           </div>
           <!-- play game button -->
           <div id="playnow-container">
             <a class="button is-dark" id="playnow">
-              <span class="icon is-small"><i class="fas fa-play-circle"></i></span>
+              <span class="icon is-small">
+                <i class="fas fa-play-circle"></i>
+              </span>
               <span>Play Now!</span>
             </a>
           </div>
         </div>
       </div>
-    </section>
-    <section class="hero is-dark is-fullheight-with-navbar hide">
+    </div>
+    <div 
+      class="hero is-dark is-fullheight-with-navbar hide" 
+      id="game-view"
+    >
       <div class="hero-body">
-        <div class="container">
-          <p class="title">            
-          </p>
+        <div class="container" id="game-view-box">
+                    
         </div>
       </div>
-    </section>
+    </div>
     <div class="modal">
       <div class="modal-background"></div>
       <div class="modal-content">
-        <!-- Any other Bulma elements you want -->
+        <!-- for showing score, exit the game (Back) -->
       </div>
     </div>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">    
