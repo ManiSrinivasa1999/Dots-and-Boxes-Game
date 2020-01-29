@@ -18,5 +18,9 @@
   "homepage": "https://github.com/ManiSrinivasa1999/Dots-and-Boxes-Game#readme",
   "devDependencies": {
     "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   }
 }

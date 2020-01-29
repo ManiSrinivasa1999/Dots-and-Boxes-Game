@@ -72,36 +72,51 @@
         init: () => {
           const HEIGHT = MODEL.gameconfig.sizeOfBoxes[0];
           const WIDTH = MODEL.gameconfig.sizeOfBoxes[1];
-          GAMEVIEWPAGEBOX.innerHTML = ``;
-          for (let h = 0; h < WIDTH-1; h += 1) {
-            GAMEVIEWPAGEBOX.innerHTML += 
+          // horizontal -to fill h times
+          // Vertical -to fill h times each after 1 horizontal
+          for (let h = 0; h < HEIGHT-1; h += 1) {
+            // fill with dots and canvas
+            let horizontal = document.createElement('div');
+            for (let k = 0; k < WIDTH-1; k +=1) {                            
+              horizontal.innerHTML += 
+              `      
+                <div class="dots"></div>
+                <canvas name="myCanvas" width="40px" height="20px"></canvas>              
+              `;
+            }
+            horizontal.innerHTML += `<div class="dots"></div>`;
+            horizontal.classList.add('horizontal');
+            GAMEVIEWPAGEBOX.appendChild(horizontal);
+            // w dots and w-1 canvas           
+            // fill with canvas
+            // w canvas and w-1 square canvas
+            let vertical = document.createElement('div');
+            for (let w = 0; w < WIDTH-1; w += 1) {
+              vertical.innerHTML += 
+              `
+              <canvas name="myCanvas" width="20px" height="40px"></canvas>
+              <canvas width="40px" height="40px"></canvas>    
+              `;
+            }
+            vertical.innerHTML += 
             `
-            <div class="dots"></div>
-            <canvas id="myCanvas" width="20vmin" height="10vmin"></canvas>
+              <canvas name="myCanvas" width="20px" height="40px"></canvas>
+            `;
+            vertical.classList.add('vertical');
+            GAMEVIEWPAGEBOX.appendChild(vertical);
+          }
+          // fill extra horizontal
+          let horizontal = document.createElement('div');
+          for (let k = 0; k < WIDTH-1; k +=1) {                            
+            horizontal.innerHTML += 
+            `      
+              <div class="dots"></div>
+              <canvas name="myCanvas" width="40px" height="20px"></canvas>              
             `;
           }
-          GAMEVIEWPAGEBOX.innerHTML +=
-          `<div class="dots"></div><br>`; 
-          for (let v = 0; v < HEIGHT-1; v += 1) {
-            for (let w = 0; w < WIDTH-1; w += 1) {
-              GAMEVIEWPAGEBOX.innerHTML += 
-              `
-              <canvas id="myCanvas" width="10vmin" height="20vmin"></canvas>
-              <canvas width="20vmin" height="20vmin"></canvas>    
-              `;
-            }
-            GAMEVIEWPAGEBOX.innerHTML += 
-            `<canvas id="myCanvas" width="10vmin" height="20vmin"></canvas><br>`;
-            for (let k = 0; k < WIDTH-1; k += 1) {
-              GAMEVIEWPAGEBOX.innerHTML += 
-              `
-              <div class="dots"></div>
-              <canvas id="myCanvas" width="20vmin" height="10vmin"></canvas>
-              `;
-            }
-            GAMEVIEWPAGEBOX.innerHTML +=
-            `<div class="dots"></div><br>`;                       
-          }                  
+          horizontal.innerHTML += `<div class="dots"></div>`;
+          horizontal.classList.add('horizontal');
+          GAMEVIEWPAGEBOX.appendChild(horizontal);                
         },
       };
       const CONTROLLER = {

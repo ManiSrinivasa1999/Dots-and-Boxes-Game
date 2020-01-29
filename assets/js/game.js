@@ -75,27 +75,40 @@
             init: function () {
                 var HEIGHT = MODEL_1.gameconfig.sizeOfBoxes[0];
                 var WIDTH = MODEL_1.gameconfig.sizeOfBoxes[1];
-                GAMEVIEWPAGEBOX_1.innerHTML = "";
-                for (var h = 0; h < WIDTH - 1; h += 1) {
-                    GAMEVIEWPAGEBOX_1.innerHTML +=
-                        "\n            <div class=\"dots\"></div>\n            <canvas id=\"myCanvas\" width=\"20vmin\" height=\"10vmin\"></canvas>\n            ";
-                }
-                GAMEVIEWPAGEBOX_1.innerHTML +=
-                    "<div class=\"dots\"></div><br>";
-                for (var v = 0; v < HEIGHT - 1; v += 1) {
-                    for (var w = 0; w < WIDTH - 1; w += 1) {
-                        GAMEVIEWPAGEBOX_1.innerHTML +=
-                            "\n              <canvas id=\"myCanvas\" width=\"10vmin\" height=\"20vmin\"></canvas>\n              <canvas width=\"20vmin\" height=\"20vmin\"></canvas>    \n              ";
-                    }
-                    GAMEVIEWPAGEBOX_1.innerHTML +=
-                        "<canvas id=\"myCanvas\" width=\"10vmin\" height=\"20vmin\"></canvas><br>";
+                // horizontal -to fill h times
+                // Vertical -to fill h times each after 1 horizontal
+                for (var h = 0; h < HEIGHT - 1; h += 1) {
+                    // fill with dots and canvas
+                    var horizontal_1 = document.createElement('div');
                     for (var k = 0; k < WIDTH - 1; k += 1) {
-                        GAMEVIEWPAGEBOX_1.innerHTML +=
-                            "\n              <div class=\"dots\"></div>\n              <canvas id=\"myCanvas\" width=\"20vmin\" height=\"10vmin\"></canvas>\n              ";
+                        horizontal_1.innerHTML +=
+                            "      \n                <div class=\"dots\"></div>\n                <canvas name=\"myCanvas\" width=\"40px\" height=\"20px\"></canvas>              \n              ";
                     }
-                    GAMEVIEWPAGEBOX_1.innerHTML +=
-                        "<div class=\"dots\"></div><br>";
+                    horizontal_1.innerHTML += "<div class=\"dots\"></div>";
+                    horizontal_1.classList.add('horizontal');
+                    GAMEVIEWPAGEBOX_1.appendChild(horizontal_1);
+                    // w dots and w-1 canvas           
+                    // fill with canvas
+                    // w canvas and w-1 square canvas
+                    var vertical = document.createElement('div');
+                    for (var w = 0; w < WIDTH - 1; w += 1) {
+                        vertical.innerHTML +=
+                            "\n              <canvas name=\"myCanvas\" width=\"20px\" height=\"40px\"></canvas>\n              <canvas width=\"40px\" height=\"40px\"></canvas>    \n              ";
+                    }
+                    vertical.innerHTML +=
+                        "\n              <canvas name=\"myCanvas\" width=\"20px\" height=\"40px\"></canvas>\n            ";
+                    vertical.classList.add('vertical');
+                    GAMEVIEWPAGEBOX_1.appendChild(vertical);
                 }
+                // fill extra horizontal
+                var horizontal = document.createElement('div');
+                for (var k = 0; k < WIDTH - 1; k += 1) {
+                    horizontal.innerHTML +=
+                        "      \n              <div class=\"dots\"></div>\n              <canvas name=\"myCanvas\" width=\"40px\" height=\"20px\"></canvas>              \n            ";
+                }
+                horizontal.innerHTML += "<div class=\"dots\"></div>";
+                horizontal.classList.add('horizontal');
+                GAMEVIEWPAGEBOX_1.appendChild(horizontal);
             }
         };
         var CONTROLLER_1 = {
